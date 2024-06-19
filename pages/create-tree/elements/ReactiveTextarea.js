@@ -1,4 +1,4 @@
-import f3 from "../../../src/index.js"
+import f3 from "../src/index.js"
 
 export default function ReactiveTextarea(updateData, textarea_selector, update_btn_selector) {
   const textarea = document.querySelector(textarea_selector)

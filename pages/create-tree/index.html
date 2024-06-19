@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>create-tree</title>
-  <link rel="shortcut icon" type="image/svg" href="/pages/logo.svg">
-  <link rel="stylesheet" href="../plugins/materialize.min.css">
-  <script src="../plugins/materialize.min.js"></script>
-  <script src="../plugins/d3.v6.js"></script>
-  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="shortcut icon" type="image/svg" href="logo.svg">
+  <link rel="stylesheet" href="plugins/materialize.min.css">
+  <script src="plugins/materialize.min.js"></script>
+  <script src="plugins/d3.v6.js"></script>
+  <link rel="stylesheet" href="create-tree.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <style>
@@ -47,10 +47,22 @@
       <div id="FamilyChart" style="position: relative ; width: 100vw"></div>
     </div>
 
-    <div class="buttons" style="position: fixed; top: 0; right: 0; padding: 5px 10px">
+    <div id="buttons-top" class="buttons" style="position: fixed; top: 0; right: 0; padding: 5px 10px; display: none">
       <input type="file" id="file" style="display: none" accept="json">
+      <button class="btn" id="newTreeButton"><i class="material-icons left">create</i>Utwórz nowe drzewo</button>
       <button class="btn" id="fileInput"><i class="material-icons left">upload</i>Wgraj drzewo z pliku</button>
       <button class="btn" id="update_btn"><i class="material-icons left">save</i>Zapisz do pliku</button>
+    </div>
+
+    <div id="EmptyDataInfo" class="empty position-absolute">
+      <div class="empty-text">
+        <h1 class="title">Witaj w kreatorze drzewa genealogicznego</h1>
+        <h6 class="subtitle">Utwórz nową rodzinę lub załaduj istniejącą</h6>
+        <div class="center-buttons">
+          <button class="btn btn-large" id="create-btn-big"><i class="material-icons left">create</i>Utwórz nową rodzinę</button>
+          <button class="btn btn-large" id="fileInput-big"><i class="material-icons left">upload</i>Edycja drzewa z pliku</button>
+        </div>
+      </div>
     </div>
 
     <div class="col s12 m3 d-none">

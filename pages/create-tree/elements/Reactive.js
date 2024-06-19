@@ -1,4 +1,4 @@
-import f3 from "../../../src/index.js";
+import f3 from "../src/index.js"
 
 export default function Reactive(selector, getCode) {
   const element = document.querySelector(selector)

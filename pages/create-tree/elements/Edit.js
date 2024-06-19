@@ -1,5 +1,3 @@
-import f3 from "../../../src/index.js"
-
 export default function Edit(cont_selector, card_edit) {
   const cont = document.querySelector(cont_selector)
 
