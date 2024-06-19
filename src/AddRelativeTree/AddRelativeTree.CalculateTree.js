@@ -4,13 +4,13 @@ export default function CalculateTree({datum, data_stash, card_dim, labels}) {
   datum = datum ? datum : {id: "0", data: {fn: "FN", ln: "LN", gender: "M"}}
   const data = [
     {x: 0, y: 0, data: datum},
-    {x: -100, y: -y, data: {rel_type: 'father', data: {label: lbls.father || "Add father", gender: "M"}}},
-    {x: 100, y: -y, data: {rel_type: 'mother', data: {label: lbls.mother || "Add mother", gender: "F"}}},
+    {x: -100, y: -y, data: {rel_type: 'father', data: {label: lbls.father || "Dodaj tatę", gender: "M"}}},
+    {x: 100, y: -y, data: {rel_type: 'mother', data: {label: lbls.mother || "Dodaj mamę", gender: "F"}}},
 
-    {x: sx, y: 0, data: {rel_type: 'spouse', data: {label: lbls.spouse || "Add spouse", gender: "F"}}},
+    {x: sx, y: 0, data: {rel_type: 'spouse', data: {label: lbls.spouse || "Dodaj partnera", gender: "F"}}},
 
-    {x: -100, y: y, data: {rel_type: 'son', data: {label: lbls.son || "Add son", gender: "M"}}},
-    {x: 100, y: y, data: {rel_type: 'daughter', data: {label: lbls.daughter || "Add daughter", gender: "F"}}},
+    {x: -100, y: y, data: {rel_type: 'son', data: {label: lbls.son || "Dodaj syna", gender: "M"}}},
+    {x: 100, y: y, data: {rel_type: 'daughter', data: {label: lbls.daughter || "Dodaj córkę", gender: "F"}}},
   ].filter(d => shouldAddRel(d.data.rel_type))
 
   function shouldAddRel(rel_type) {

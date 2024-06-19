@@ -1,0 +1,52 @@
+[
+  {
+    "id": "0",
+    "rels": {
+      "mother": "868d6bf5-70d1-41b1-92d3-9bd5abcbaea6",
+      "father": "c89cc702-c83c-44ee-919e-c5adb71912ed"
+    },
+    "data": {
+      "first name": "Pierwsza",
+      "last name": "Osoba",
+      "birthday": "19.06.2024",
+      "avatar": "https://static8.depositphotos.com/1009634/988/v/950/depositphotos_9883921-stock-illustration-no-user-profile-picture.jpg",
+      "gender": "M"
+    }
+  },
+  {
+    "id": "868d6bf5-70d1-41b1-92d3-9bd5abcbaea6",
+    "data": {
+      "gender": "F",
+      "first name": "fff",
+      "last name": "",
+      "birthday": "",
+      "avatar": ""
+    },
+    "rels": {
+      "children": [
+        "0"
+      ],
+      "spouses": [
+        "c89cc702-c83c-44ee-919e-c5adb71912ed"
+      ]
+    }
+  },
+  {
+    "id": "c89cc702-c83c-44ee-919e-c5adb71912ed",
+    "data": {
+      "gender": "M",
+      "first name": "",
+      "last name": "dd",
+      "birthday": "",
+      "avatar": ""
+    },
+    "rels": {
+      "spouses": [
+        "868d6bf5-70d1-41b1-92d3-9bd5abcbaea6"
+      ],
+      "children": [
+        "0"
+      ]
+    }
+  }
+]

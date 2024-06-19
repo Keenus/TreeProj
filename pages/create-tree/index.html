@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>create-tree</title>
+  <link rel="shortcut icon" type="image/svg" href="/pages/logo.svg">
+  <link rel="stylesheet" href="../plugins/materialize.min.css">
+  <script src="../plugins/materialize.min.js"></script>
+  <script src="../plugins/d3.v6.js"></script>
+  <link rel="stylesheet" href="../styles/main.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <style>
+    #FamilyChart {
+      height: 100vh;
+      width:100%;
+    }
+    textarea {
+      height: 200px;
+      width:100%;
+    }
+    .p5 {padding: 5px}
+    code {
+      display: block;
+      max-height: 150px;
+      overflow-y: auto;
+      font-size: 10px;
+    }
+    @media only screen and (max-width: 600px) {
+      #FamilyChart {
+        height: 60vh;
+        min-height: 300px;
+      }
+      textarea {
+        height: 30vh;
+        min-height: 200px;
+      }
+    }
+  </style>
+
+</head>
+<body>
+<div>
+  <div class="row">
+    <div class="col s12 m12" style="padding: 0">
+      <div id="FamilyChart" style="position: relative ; width: 100vw"></div>
+    </div>
+
+    <div class="buttons" style="position: fixed; top: 0; right: 0; padding: 5px 10px">
+      <input type="file" id="file" style="display: none" accept="json">
+      <button class="btn" id="fileInput"><i class="material-icons left">upload</i>Wgraj drzewo z pliku</button>
+      <button class="btn" id="update_btn"><i class="material-icons left">save</i>Zapisz do pliku</button>
+    </div>
+
+    <div class="col s12 m3 d-none">
+      <div id="edit_cont" class="card p5"></div>
+      <div id="display_cont" class="card p5"></div>
+    </div>
+    <div class="col m12 d-none">
+      <h5>Data</h5>
+        <textarea id="textarea"></textarea>
+      <h5>family-chart.css</h5>
+      <div class="card p5">
+        <pre><code id="family-chart-css"></code></pre>
+      </div>
+      <h5>Vanila</h5>
+      <div class="card p5">
+        <pre><code id="ReactiveVanila"></code></pre>
+      </div>
+      <h5>Vue</h5>
+      <div class="card p5">
+        <pre><code id="ReactiveVue"></code></pre>
+      </div>
+      <h5>React</h5>
+      <div class="card p5">
+        <pre><code id="ReactiveReact"></code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="create-tree.js" type="module"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.body.appendChild(document.createElement("div"))
+    modal.setAttribute("id", "form_modal")
+    modal.setAttribute("class", "modal")
+    M.Modal.init(modal, {});
+  });
+</script>
+</body>
+</html>
