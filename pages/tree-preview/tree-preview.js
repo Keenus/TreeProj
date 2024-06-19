@@ -16,7 +16,6 @@ document.getElementById('file').addEventListener('change', function() {
         document.getElementById('fileInput').value = '';
         if (data && data.length > 0) {
             console.log('data', data)
-            console.log('data', data)
             const store = f3.createStore({
                     data,
                     node_separation: 250,
@@ -30,7 +29,7 @@ document.getElementById('file').addEventListener('change', function() {
                     store,
                     svg: view.svg,
                     card_dim: {w: 220, h: 70, text_x: 75, text_y: 15, img_w: 60, img_h: 60, img_x: 5, img_y: 5},
-                    card_display: [d => d.data.label || '', d => d.data.desc || ''],
+                    card_display: [d => d.data.first_name + ' ' + d.data.last_name ? d.data.first_name + ' ' + d.data.last_name : 'BRAK DANYCH', d => d.data.birthday || ''],
                     mini_tree: true,
                     link_break: false
                 })
@@ -40,7 +39,6 @@ document.getElementById('file').addEventListener('change', function() {
             store.update.tree({initial: true})
 
             document.getElementById('EmptyDataInfo').style.display = 'none';
-
         }
     }
     reader.readAsText(this.files[0]);

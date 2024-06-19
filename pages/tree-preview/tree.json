@@ -6,8 +6,8 @@
       "father": "c89cc702-c83c-44ee-919e-c5adb71912ed"
     },
     "data": {
-      "first name": "Pierwsza",
-      "last name": "Osoba",
+      "first_name": "Pierwsza",
+      "last_name": "Osoba",
       "birthday": "19.06.2024",
       "avatar": "https://static8.depositphotos.com/1009634/988/v/950/depositphotos_9883921-stock-illustration-no-user-profile-picture.jpg",
       "gender": "M"
@@ -17,8 +17,8 @@
     "id": "868d6bf5-70d1-41b1-92d3-9bd5abcbaea6",
     "data": {
       "gender": "F",
-      "first name": "fff",
-      "last name": "",
+      "first_name": "fff",
+      "last_name": "",
       "birthday": "",
       "avatar": ""
     },
@@ -35,8 +35,8 @@
     "id": "c89cc702-c83c-44ee-919e-c5adb71912ed",
     "data": {
       "gender": "M",
-      "first name": "",
-      "last name": "dd",
+      "first_name": "",
+      "last_name": "dd",
       "birthday": "",
       "avatar": ""
     },

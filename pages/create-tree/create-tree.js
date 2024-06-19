@@ -7,6 +7,8 @@ import ReactiveReact from "./elements/ReactiveReact.js"
 import Display from "./elements/Display.js"
 import {Form} from "../../src/view/elements/Form.js"
 
+//funkcja do wgrania danych do edytora
+
 
 (async () => {
   const cont = document.querySelector("#FamilyChart"),
@@ -63,23 +65,23 @@ import {Form} from "../../src/view/elements/Form.js"
 })();
 
 function firstNode() {
-  return [{id: '0', rels: {}, data: {'first name': 'nowa osoba', 'last name': "", 'birthday': 'kliknij by edytować tą osobę',
+  return [{id: '0', rels: {}, data: {'first_name': 'nowa', 'last_name': "osoba", 'birthday': '',
       avatar: '', gender: "M"}}]
 }
 
 function cardEditParams() {
   return [
-    {type: 'text', placeholder: 'Imię', key: 'first name'},
-    {type: 'text', placeholder: 'Nazwisko', key: 'last name'},
+    {type: 'text', placeholder: 'Imię', key: 'first_name'},
+    {type: 'text', placeholder: 'Nazwisko', key: 'last_name'},
     {type: 'text', placeholder: 'Data urodzenia', key: 'birthday'},
-    {type: 'text', placeholder: 'Zdjęcie', key: 'avatar'}
+    {type: 'text', placeholder: 'Link do zdjęcia', key: 'avatar'}
   ]
 }
 
 function cardDisplay() {
-  const d1 = d => `${d.data['first name'] || ''} ${d.data['last name'] || ''}`,
+  const d1 = d => `${d.data['first_name'] || ''} ${d.data['last_name'] || ''}`,
     d2 = d => `${d.data['birthday'] || ''}`
-  d1.create_form = "{first name} {last name}"
+  d1.create_form = "{first_name} {last_name}"
   d2.create_form = "{birthday}"
 
   return [d1, d2]
