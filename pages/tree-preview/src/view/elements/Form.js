@@ -35,7 +35,7 @@ export function Form({datum, rel_datum, store, rel_type, card_edit, postSubmit, 
     const data_stash = store.getData();
     return (`
       <div>
-        <label>Inny rodzic</label>
+        <label>Wybierz drugiego rodzica</label>
         <select name="other_parent" style="display: block">
           ${(!rel_datum.rels.spouses || rel_datum.rels.spouses.length === 0) 
               ? '' 
@@ -43,7 +43,7 @@ export function Form({datum, rel_datum, store, rel_type, card_edit, postSubmit, 
                   const spouse = data_stash.find(d => d.id === sp_id)
                   return (`<option value="${sp_id}" ${i === 0 ? 'selected' : ''}>${card_display[0](spouse)}</option>`)
                 }).join("\n")}
-          <option value="${'_new'}">Nowy partner</option>
+          <option value="${'_new'}">Dodaj nowego partnera (ojca/matkę dziecka)</option>
         </select>
       </div>
     `)

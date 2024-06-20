@@ -194,11 +194,14 @@ g.card_add text {
   padding: 10px;
 }
 
-.center-buttons {
+.center-buttons, .buttons {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
   gap: 5px;
+}
+
+.buttons button {
+  flex-grow: 1;
 }
 
 input {
@@ -209,6 +212,6 @@ input {
   cursor: pointer;
 }
 
-.card_add:hover {
-  transform: fil;
+.height-100 {
+  height: 100vh;
 }

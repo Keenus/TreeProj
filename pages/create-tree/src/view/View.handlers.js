@@ -25,7 +25,7 @@ export function setupSvg(svg, zoom_polite) {
   }
 }
 
-function positionTree({t, svg, transition_time=2000}) {
+function positionTree({t, svg, transition_time=600}) {
   const zoom = svg.__zoomObj
 
   // d3.select(svg).call(zoom.transform, d3.zoomIdentity.translate(x*k, y*k))

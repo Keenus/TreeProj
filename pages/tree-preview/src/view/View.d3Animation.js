@@ -17,7 +17,7 @@ export default function d3AnimationView({store, cont, Card}) {
     const tree = store.state.tree,
       view = d3.select(svg).select(".view"),
       tree_position = props.tree_position || 'fit',
-      transition_time = props.hasOwnProperty('transition_time') ? props.transition_time : 2000;
+      transition_time = props.hasOwnProperty('transition_time') ? props.transition_time : 600;
 
     updateCards();
     updateLinks();

@@ -11,7 +11,7 @@ export function Form({datum, rel_datum, store, rel_type, card_edit, postSubmit, 
               <span style="display: ${datum.to_add || !!rel_datum ? 'none' : null}; float: right; cursor: pointer" class="red-text delete">Usuń</span>
             </div>
             <div class="container-fluid">
-            <div class="row">
+            <div class="row mob">
               <span style="font-size: 16px; font-weight: bold">Płeć: </span>
               <label class="male-radio"><input type="radio" name="gender" value="M" ${datum.data.gender === 'M' ? 'checked' : ''}><span>Mężczyzna</span></label>
               <label class="female-radio"><input type="radio" name="gender" value="F" ${datum.data.gender === 'F' ? 'checked' : ''}><span>Kobieta</span></label>
@@ -35,7 +35,7 @@ export function Form({datum, rel_datum, store, rel_type, card_edit, postSubmit, 
     const data_stash = store.getData();
     return (`
       <div>
-        <label>Inny rodzic</label>
+        <label>Wybierz drugiego rodzica</label>
         <select name="other_parent" style="display: block">
           ${(!rel_datum.rels.spouses || rel_datum.rels.spouses.length === 0) 
               ? '' 
@@ -43,7 +43,7 @@ export function Form({datum, rel_datum, store, rel_type, card_edit, postSubmit, 
                   const spouse = data_stash.find(d => d.id === sp_id)
                   return (`<option value="${sp_id}" ${i === 0 ? 'selected' : ''}>${card_display[0](spouse)}</option>`)
                 }).join("\n")}
-          <option value="${'_new'}">Nowy partner</option>
+          <option value="${'_new'}">Dodaj nowego partnera (ojca/matkę dziecka)</option>
         </select>
       </div>
     `)

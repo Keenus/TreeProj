@@ -26,7 +26,7 @@ document.getElementById('file').addEventListener('change', function() {
     if (data && data.length > 0) {
       initializeFamilyChart(data);
       document.getElementById('EmptyDataInfo').style.display = 'none';
-      document.getElementById('buttons-top').style.display = 'block';
+      document.getElementById('buttons-top').style.display = 'flex';
     }
   }
   reader.readAsText(this.files[0]);

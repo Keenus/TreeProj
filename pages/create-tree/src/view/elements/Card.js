@@ -78,9 +78,9 @@ export function Card(props) {
     props.svg.insertAdjacentHTML('afterbegin', (`
       <defs id="f3CardDef">
         <linearGradient id="fadeGrad">
-          <stop offset="0.9" stop-color="white" stop-opacity="0"/>
-          <stop offset=".91" stop-color="white" stop-opacity=".5"/>
-          <stop offset="1" stop-color="white" stop-opacity="1"/>
+          <stop offset="0.9" stop-color="red" stop-opacity="0"/>
+          <stop offset=".91" stop-color="red" stop-opacity=".5"/>
+          <stop offset="1" stop-color="red" stop-opacity="1"/>
         </linearGradient>
         <mask id="fade" maskContentUnits="objectBoundingBox"><rect width="1" height="1" fill="url(#fadeGrad)"/></mask>
         <clipPath id="card_clip"><path d="${curvedRectPath({w:card_dim.w, h:card_dim.h}, 5)}"></clipPath>
