@@ -163,19 +163,69 @@ g.card_add text {
 }
 
 .modal {
-  background: #434243;
+  background: #f8f9fa; /* Lighter background for a more modern look */
   border-radius: 10px;
-  color: white;
+  color: #333; /* Darker text for better readability */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
+
 .modal .modal-content {
-  background: #434243;
+  background: #fff; /* White background for contrast */
   border-radius: 10px;
-  color: white;
+  color: #333;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .modal .modal-footer {
-    background: #434243;
-    border-radius: 0 0 10px 10px;
+  background: #fff;
+  border-radius: 0 0 10px 10px;
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0; /* Light border for separation */
+}
+
+.delete {
+  cursor: pointer;
+  color: #ff4d4d; /* Red color for delete button */
+  font-weight: bold;
+}
+
+.container-fluid {
+  padding: 20px 0;
+}
+
+.row.mob label{
+  flex-grow: 1;
+}
+
+label {
+  max-width: 300px;
+}
+
+.row.mob {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form-label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.btn:hover {
+  background: #0056b3; /* Darker blue on hover */
 }
 
 .male-radio {
@@ -202,10 +252,6 @@ g.card_add text {
 
 .buttons button {
   flex-grow: 1;
-}
-
-input {
-    color: white;
 }
 
 .card_add {

@@ -4,31 +4,34 @@ export function Form({datum, rel_datum, store, rel_type, card_edit, postSubmit, 
 
   function setupFromHtml() {
     el.innerHTML = (`
-      <div class="modal-content">
-        <form>
-          <div>
-            <div style="text-align: left">
-              <span style="display: ${datum.to_add || !!rel_datum ? 'none' : null}; float: right; cursor: pointer" class="red-text delete">Usuń</span>
-            </div>
-            <div class="container-fluid">
-            <div class="row mob">
-              <span style="font-size: 16px; font-weight: bold">Płeć: </span>
-              <label class="male-radio"><input type="radio" name="gender" value="M" ${datum.data.gender === 'M' ? 'checked' : ''}><span>Mężczyzna</span></label>
-              <label class="female-radio"><input type="radio" name="gender" value="F" ${datum.data.gender === 'F' ? 'checked' : ''}><span>Kobieta</span></label>
-            </div>
-            </div>
-          </div>
-          ${getEditFields(card_edit)}
-          ${(rel_type === "son" || rel_type === "daughter") ? otherParentSelect() : ''}
-          <br><br>
-          <div class="modal-footer" style="text-align: center">
-            <button type="submit" class="btn">Potwierdź</button>
-          </div>
-        </form>
-      </div>
-    `)
-    el.querySelector("form").addEventListener('submit', submitFormChanges)
-    el.querySelector(".delete").addEventListener('click', deletePerson)
+        <div class="modal-content">
+            <form>
+                <div class="form-header">
+                    <span class="delete" style="display: ${datum.to_add || !!rel_datum ? 'none' : 'inline-block'}">Usuń</span>
+                </div>
+                <div class="container-fluid">
+                    <div class="row mob">
+                        <span class="form-label">Płeć: </span>
+                        <label class="male-radio">
+                            <input type="radio" name="gender" value="M" ${datum.data.gender === 'M' ? 'checked' : ''}>
+                            <span>Mężczyzna</span>
+                        </label>
+                        <label class="female-radio">
+                            <input type="radio" name="gender" value="F" ${datum.data.gender === 'F' ? 'checked' : ''}>
+                            <span>Kobieta</span>
+                        </label>
+                    </div>
+                </div>
+                ${getEditFields(card_edit)}
+                ${(rel_type === "son" || rel_type === "daughter") ? otherParentSelect() : ''}
+                <div class="modal-footer">
+                    <button type="submit" class="btn">Potwierdź</button>
+                </div>
+            </form>
+        </div>
+    `);
+    el.querySelector("form").addEventListener('submit', submitFormChanges);
+    el.querySelector(".delete").addEventListener('click', deletePerson);
   }
 
   function otherParentSelect() {
@@ -66,7 +69,7 @@ export function Form({datum, rel_datum, store, rel_type, card_edit, postSubmit, 
   function getEditFields(card_edit) {
     return card_edit.map(d => (
       d.type === 'text'
-        ? `<input type="text" name="${d.key}" placeholder="${d.placeholder}" value="${datum.data[d.key] || ''}">`
+        ? `<label for="${d.key}">${d.placeholder}</label> <input type="text" id="${d.key}" name="${d.key}" placeholder="${d.placeholder}" value="${datum.data[d.key] || ''}">`
         : d.type === 'textarea'
         ? `<textarea class="materialize-textarea" name="${d.key}" placeholder="${d.placeholder}">${datum.data[d.key] || ''}</textarea>`
         : ''
